@@ -1,0 +1,67 @@
+body {
+  
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;  
+}  
+.Salary-Form {
+  max-width: 600px;
+  width: 30%;
+  /* margin: auto;   */
+  border-radius: 15px;
+  /* background: linear-gradient(to bottom right, #6a11cb, #2575fc); */
+  color: white;
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); */
+  transition: all 0.3s ease;
+}  
+  .Salary-Form:hover {
+    transform: scale(1.02);
+  }  
+  .Salary-Form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+  }  
+  .Salary-Form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }  
+  .Salary-Form input,
+  .Salary-Form textarea {
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .Salary-Form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .Salary-Form button {
+    padding: 15px;
+    background-color: #fff;
+    color: #2575fc;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Salary-Form button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .error {
+    background: #ff4d4d;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+  

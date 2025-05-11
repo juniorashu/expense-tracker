@@ -1,0 +1,102 @@
+.income-container {
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+    background: #f8d7da; /* Light red */
+    min-height: 90vh;
+    font-family: Arial, sans-serif;
+    width: 80vw;
+  }
+  
+  .income-form {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .income-form h2 {
+    color: #7a1f2d;
+  }
+  
+  .income-form input,
+  .income-form select,
+  .income-form textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .add-button {
+    margin-top: 15px;
+    background-color: #c82333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #a71d2a;
+  }
+  
+  .income-display {
+    flex: 2;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .income-display h2 {
+    margin-bottom: 20px;
+  }
+  
+  .green {
+    color: green;
+  }
+  
+  .income-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .income-card {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    gap: 15px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon {
+    font-size: 28px;
+    margin-top: 4px;
+  }
+  
+  .details {
+    flex-grow: 1;
+  }
+  
+  .details h4 {
+    margin: 0;
+  }
+  
+  .delete-button {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #c82333;
+  }
+  
