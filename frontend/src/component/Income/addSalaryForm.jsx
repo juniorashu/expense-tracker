@@ -24,7 +24,7 @@ function AddSalaryForm(props) {
         description,
       };
     
-      axios.post('/api/salaries', data)
+      axios.post('http://localhost:5000/api/salaries', data)
         .then(() => {
           props.onSalaryAdded() // Call parent function to refetch
           setTitle('');

@@ -1,0 +1,55 @@
+/* Reset and full window layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+    justify-content: center;
+  align-items: flex-start;
+}
+.income-card {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+/* Make expense-page take 100% of window and align left */
+.expense-page {
+  width: 70vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Main content inside full width container */
+.main-content {
+  flex: 1;
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  overflow: hidden;
+}
+
+/* Form */
+.expense-form {
+  width: 40%;
+  max-width: 30%;
+  padding: 20px;
+}
+
+/* List */
+.expense-list {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}

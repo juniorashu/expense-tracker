@@ -31,7 +31,7 @@ router.put('/:id', async (req, res) => {
     const salary = await Salary.findById(req.params.id);
 
     if (!salary) {
-      return res.status(404).json({ message: 'Salary not found' });
+      return res.status(404).json({ message: 'Salary not founds' });
     }
 
     salary.title = title;
@@ -57,5 +57,8 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+
+
+
 
 export default router;

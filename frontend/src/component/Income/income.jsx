@@ -9,7 +9,7 @@ function Income() {
   const [totalIncome, setTotalIncome] = useState(0);
 
   const fetchSalaries = () => {
-    axios.get('/api/salaries')
+    axios.get('http://localhost:5000/api/salaries')
       .then((res) => {
         setSalaries(res.data);
         const total = res.data.reduce((sum, entry) => sum + Number(entry.amount), 0);
@@ -18,18 +18,11 @@ function Income() {
       .catch((err) => console.error(err));
   };
   useEffect(() => {
-    // axios.get('/api/salaries')
-    //   .then((res) => {
-    //     setSalaries(res.data);
-    //     const total = res.data.reduce((sum, entry) => sum + Number(entry.amount), 0);
-    //     setTotalIncome(total);
-    //   })
-    //   .catch((err) => console.error(err));
     fetchSalaries();
   }, []);
   // delete items from the list
   const handleDelete = (id) => {
-    axios.delete(`/api/salaries/${id}`)
+    axios.delete(`http://localhost:5000/api/salaries/${id}`)
       .then(() => {
         fetchSalaries(); // Refresh the list after deletion
       })
@@ -38,31 +31,15 @@ function Income() {
   
 
   return (
-    <div className="income-container">
-      {/* Left Form */}
-      {/* <div className="income-form">
-        <h2>Incomes</h2>
-        <input type="text" placeholder="Title" />
-        <input type="number" placeholder="Amount" />
-        <input type="date" />
-        <select>
-          <option>Select Option</option>
-          <option>Salary</option>
-          <option>Freelance</option>
-        </select>
-        <textarea placeholder="Add A Reference" rows="3"></textarea>
-        <button className="add-button">+ Add Income</button>
-      </div> */}
+    <div className="income-container">     
         <AddSalaryForm onSalaryAdded={fetchSalaries} />
-
-      {/* Right Display */}
       <div className="income-display">
         <h2>Total Income: <span className="green">${totalIncome}</span></h2>
 
         <div className="income-list">
           {salaries.map((item, index) => (
             <div key={index} className="income-card">
-              <div className="icon">&#128176;</div> Money icon 
+              <div className="icon">&#128176;</div> 
               <div className="details">
                 <h4>{item.title}</h4>
                 <p><strong>${item.amount}</strong></p>

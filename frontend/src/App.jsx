@@ -3,16 +3,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './sidebar/Layout';
 import AddSalaryForm from './component/Income/addSalaryForm';
 import Income from './component/Income/income';
-
-function Dashboard() {
-  return <h1>Dashboard</h1>;
-}
+import Expenses from './component/expense/expense';
+import Dashboard from './component/Dashboard/DashBoard';
 
 
-
-function Expenses() {
-  return <h1>Expenses Page</h1>;
-}
 
 function Transactions() {
   return <h1>Transactions Page</h1>;
