@@ -1,11 +1,18 @@
 /* Dashboard.css */
+body {
+  margin: 0;
+  overflow-x: hidden;  /*Prevent horizontal scroll */
+}
+
 .dashboard {
-    
+  border: 1px solid #ddd;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   color: #333;
+  box-sizing: border-box; /* Include padding in width calculation */
+  overflow: hidden; /* Prevent scrollbars */
 }
 
 .dashboard-title {
@@ -30,8 +37,74 @@
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
+/* Charts Container - Modified to prevent overflow */
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+  width: 100%; /* Ensure it doesn't exceed parent width */
+}
+
+.chart-wrapper {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  overflow: hidden; /* Hide any potential overflow */
+}
+
+/* ResponsiveContainer wrapper - Add this if you're using Recharts */
+.recharts-wrapper {
+  overflow: hidden !important;
+}
+
+/* Recent History - Prevent overflow */
+.recent-history {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive Design - Modified to prevent overflow */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 15px;
+  }
+  
+  .summary-cards, .range-cards {
+    flex-direction: column;
+  }
+  
+  .charts-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .chart-wrapper {
+    padding: 15px;
+  }
+  
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .history-amount, .history-date {
+    align-self: flex-end;
+  }
+}
+
+/* Keep all your existing styles below */
 .income-card {
   border-top: 4px solid #00C49F;
 }
@@ -99,35 +172,12 @@
   color: #666;
 }
 
-/* Charts */
-.charts-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.chart-wrapper {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .chart-wrapper h2 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 15px;
   color: #2c3e50;
   font-size: 18px;
-}
-
-/* Recent History */
-.recent-history {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .recent-history h2 {
@@ -192,25 +242,4 @@
   padding: 50px;
   font-size: 18px;
   color: #666;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .summary-cards, .range-cards {
-    flex-direction: column;
-  }
-  
-  .charts-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .history-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-  
-  .history-amount, .history-date {
-    align-self: flex-end;
-  }
 }
